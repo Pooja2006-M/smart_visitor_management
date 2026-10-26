@@ -1,0 +1,74 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Cambria, Georgia, serif; font-weight: 800; font-size: 42px; fill: #ffffff; letter-spacing: -0.5px; }
+      .subtitle { font-family: Cambria, Georgia, serif; font-weight: 400; font-size: 18px; fill: #94a3b8; letter-spacing: 0.5px; }
+      .badge-text { font-family: Cambria, Georgia, serif; font-weight: 600; font-size: 12px; fill: #3b82f6; letter-spacing: 1px; text-transform: uppercase; }
+    </style>
+    
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1c" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bg)" rx="16" />
+  
+  <!-- Subtle Grid Background -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="16" />
+  
+  <!-- Scanning Line Animation -->
+  <line x1="0" y1="0" x2="800" y2="0" stroke="rgba(59, 130, 246, 0.4)" stroke-width="2" filter="url(#glow)">
+    <animate attributeName="y1" values="-10; 460; -10" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="y2" values="-10; 460; -10" dur="5s" repeatCount="indefinite" />
+  </line>
+
+  <g transform="translate(400, 215)" text-anchor="middle">
+    <!-- Mini Badge -->
+    <rect x="-65" y="-95" width="130" height="26" fill="rgba(59, 130, 246, 0.1)" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1" rx="13" />
+    <text x="0" y="-78" class="badge-text">LIVE PREVIEW</text>
+
+    <!-- Main Headings -->
+    <text y="-25" class="title">
+      Smart Visitor Management
+    </text>
+    <text y="15" class="subtitle">
+      Automate check-ins. Enhance security. Wow your guests.
+    </text>
+    
+    <!-- Progress Bar Animation -->
+    <rect x="-120" y="55" width="240" height="6" fill="#1e293b" stroke="rgba(255,255,255,0.05)" stroke-width="1" rx="3">
+      <animate attributeName="width" values="0; 240; 240" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="x" values="0; -120; -120" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="-120" y="55" width="0" height="6" fill="url(#accent)" rx="3" filter="url(#glow)">
+      <animate attributeName="width" values="0; 240; 240" dur="4s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Decorative Tech UI Elements -->
+  <!-- Left Side UI Circle -->
+  <circle cx="120" cy="225" r="50" fill="none" stroke="rgba(59, 130, 246, 0.15)" stroke-width="2" stroke-dasharray="12 6">
+    <animateTransform attributeName="transform" type="rotate" from="0 120 225" to="360 120 225" dur="12s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="120" cy="225" r="30" fill="none" stroke="rgba(139, 92, 246, 0.25)" stroke-width="2" stroke-dasharray="4 8">
+    <animateTransform attributeName="transform" type="rotate" from="360 120 225" to="0 120 225" dur="8s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Right Side UI Card -->
+  <rect x="630" y="195" width="60" height="60" fill="none" stroke="rgba(59, 130, 246, 0.2)" stroke-width="2" rx="12">
+    <animateTransform attributeName="transform" type="rotate" from="0 660 225" to="360 660 225" dur="20s" repeatCount="indefinite" />
+  </rect>
+  <rect x="645" y="210" width="30" height="30" fill="rgba(139, 92, 246, 0.1)" rx="6" />
+</svg>
